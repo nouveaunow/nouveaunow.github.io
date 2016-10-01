@@ -1,30 +1,99 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Hank Quinlan, Horrible Cop</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Wallpaper Calculator</title>
+		<meta name="description" content="The Nouveau Wallpapering Wallpaper Calculator">
+		<meta name="keywords" content="Wallpaper Calculator">
+		
+		<meta http-equiv="Content-Language" content="en-gb">
+		<meta name="robots" content="all">
+		<meta name="Revisit-After" content="7 days">
+		<meta http-equiv="imagetoolbar" content="false">
+		<meta name="MSSmartTagsPreventParsing" content="true">
+		<meta name="author" content="Acopic Ltd">
+		<link rel="stylesheet" type="text/css" href="./css/wallpapercalculator.css" media="screen">
+                <script src="./js/jquery.js" type="text/javascript"></script>
+                <script src="./js/wallpapercalculator.js" type="text/javascript"></script>
+                
+		<script type="text/javascript">
+		$(document).ready(function(){
+                    wpCalc();
+		});
+		</script>
+		
 	</head>
 	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
-	</body>
-</html>
+		<div id="header">
+                    <div id="tagline">Need some help estimating how much wallpaper you will need? Try our wallpaper calculator. Enter the wall measurements, the roll width & the pattern measurements 
+(you'll find these in the information about the wallpaper online, or on the wallpaper product label.)</div>
+                </div>
+                <div id="content">
+                    <div id="calculator">
+                        <div class="row double">
+                            <div class="label">Unit of Measurement:</div>
+                            <div class="field">
+                                <select id="unit" name="unit">
+                                    <option value="m">Metric (Metres and Centimetres)</option>
+                                    <option value="i">Imperial (Feet and Inches)</option>
+                                </select>
+                             </div>
+                        </div>
+                        <div class="row double">
+                            <div class="label">Height of walls:</div>
+                            <div class="field">
+                                <input id="height_m" name="height_m" value=""><span class="u_m">m</span><input id="height_c" name="height_c" value=""><span class="u_c">cm</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Length of 1st wall:</div>
+                            <div class="field">
+                                <input id="length1_m" name="length1_m" value=""><span class="u_m">m</span><input id="length1_c" name="length1_c" value=""><span class="u_c">cm</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Length of 2nd wall:</div>
+                            <div class="field">
+                                <input id="length2_m" name="length2_m" value=""><span class="u_m">m</span><input id="length2_c" name="length2_c" value=""><span class="u_c">cm</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Length of 3rd wall:</div>
+                            <div class="field">
+                                <input id="length3_m" name="length3_m" value=""><span class="u_m">m</span><input id="length3_c" name="length3_c" value=""><span class="u_c">cm</span>
+                            </div>
+                        </div>
+                        <div class="row double">
+                            <div class="label">Length of 4th wall:</div>
+                            <div class="field">
+                                <input id="length4_m" name="length4_m" value=""><span class="u_m">m</span><input id="length4_c" name="length4_c" value=""><span class="u_c">cm</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Pattern repeat:</div>
+                            <div class="field">
+                                <input id="repeat" name="repeat" value=""><span class="u_c">cm</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">Roll width:</div>
+                            <div class="field">
+                                <input id="width" name="width" value=""><span class="u_c">cm</span>
+                            </div>
+                        </div>
+                        <div class="row triple">
+                            <div class="buttons">
+                                <a href="javascript:void(0);" id="reset"><img src="./Wallpaper Calculator_files/resetcalculator.png" alt="Reset"></a><a href="javascript:void(0);" id="estimate"><img src="./Wallpaper Calculator_files/estimatequantity.png" alt="Estimate Quantity"></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="result">
+                                <strong>Approx:</strong> <input id="res" name="res" value="" readonly="readonly"> rolls of <span id="qu_m">10m (33ft)</span> paper needed.
+                            </div>
+                        </div>
+                        <div class="disclaimer">
+                            Please be aware: This is only for estimation purposes and can't be relied upon as a fool proof method for  acertaining the exact number of roll required. It is often a good idea to purchase an exra roll of wallpaper just in case. Having extra paper will also ensure that any damage that accidently occurs in the future can easily be repaired.
+
+                        </div>
+                    </div>
+                </div>
+	
+</body></html>
