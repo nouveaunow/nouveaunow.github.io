@@ -102,7 +102,7 @@ strong {
 
 #calculator .buttons {
     float:left;
-    display:inline;
+    display:flex;
     width:390px;
 }
 
